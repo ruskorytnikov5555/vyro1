@@ -1,0 +1,11 @@
+export default function handler(req, res) {
+  if (req.method === "POST") {
+    // В реальном проекте — валидировать, отправить в CRM или почту
+    // Здесь — просто эхо
+    const body = req.body;
+    console.log("Lead", body);
+    res.status(200).json({ ok: true, message: "Заявка принята" });
+  } else {
+    res.status(405).json({ ok: false });
+  }
+}
